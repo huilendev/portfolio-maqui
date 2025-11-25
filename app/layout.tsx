@@ -9,7 +9,6 @@ const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] })
 export const metadata: Metadata = {
   title: 'Macarena - Designer & Developer',
   description: 'Cyberpunk portfolio showcasing UX/UI and graphic design projects',
-  generator: 'v0.app',
   icons: {
     icon: [
       {

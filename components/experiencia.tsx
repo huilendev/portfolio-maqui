@@ -49,7 +49,6 @@ const experiences: ExperienceItem[] = [
   },
 ];
 
-// --- Hook Reveal ---
 const useReveal = (text: string, inView: boolean) => {
   const [output, setOutput] = useState("");
 
@@ -83,10 +82,7 @@ const useReveal = (text: string, inView: boolean) => {
 
 export default function Experiencia() {
   return (
-    <section
-      id="experiencia"
-      className="relative py-32 px-6 max-w-5xl mx-auto"
-    >
+    <section id="experiencia" className="relative py-32 px-6 max-w-5xl mx-auto">
       <div className="absolute inset-0 opacity-20 pointer-events-none bg-[linear-gradient(0deg,rgba(255,0,180,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.15)_1px,transparent_1px)] bg-[55px_55px]"></div>
 
       <h2 className="text-5xl md:text-6xl font-black mb-8 text-white font-mono text-center">

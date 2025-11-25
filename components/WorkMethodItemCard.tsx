@@ -42,7 +42,6 @@ const workMethods: WorkMethodItem[] = [
   },
 ];
 
-// --- Hook Reveal ---
 const useReveal = (text: string, inView: boolean) => {
   const [output, setOutput] = useState("");
 
@@ -88,8 +87,8 @@ export default function WorkMethodItemCard() {
 
       <p className="text-center text-white text-base mb-4 max-w-3xl mx-auto">
         Investigación — Estrategia — Diseño end-to-end <br />
-        Un proceso donde la investigación, el diseño y la
-        colaboración se fusionan para crear experiencias que impactan
+        Un proceso donde la investigación, el diseño y la colaboración se
+        fusionan para crear experiencias que impactan
       </p>
 
       <p className="text-center text-white/90 text-sm mb-20 max-w-3xl mx-auto leading-relaxed">
@@ -103,8 +102,6 @@ export default function WorkMethodItemCard() {
       </p>
 
       <div className="relative max-w-2xl mx-auto">
-
-
         <div className="space-y-0">
           {workMethods.map((method, index) => {
             const { ref, inView } = useInView({

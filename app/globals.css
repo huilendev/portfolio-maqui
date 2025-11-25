@@ -1,12 +1,7 @@
-/* globals */
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-/* ------------------------------------------------------------------------- */
-/* ROOT THEME */
-/* ------------------------------------------------------------------------- */
 
 :root {
   --background: 0 0% 2%;
@@ -49,13 +44,9 @@
   --destructive-foreground: 0 0% 98%;
 }
 
-/* ------------------------------------------------------------------------- */
-/* TAILWIND THEME */
-/* ------------------------------------------------------------------------- */
-
 @theme inline {
-  --font-sans: 'Space Mono', 'Space Mono Fallback';
-  --font-mono: 'Space Mono', 'Space Mono Fallback';
+  --font-sans: "Space Mono", "Space Mono Fallback";
+  --font-mono: "Space Mono", "Space Mono Fallback";
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -96,19 +87,19 @@
   }
 }
 
-/* ------------------------------------------------------------------------- */
-/* CYBERPUNK ANIMATIONS & MICROINTERACTIONS */
-/* ------------------------------------------------------------------------- */
-
-/* Glow text (original) */
 @keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1);
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
   }
   50% {
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.5);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.2);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+      0 0 40px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+      inset 0 0 20px rgba(0, 255, 255, 0.2);
   }
 }
 
@@ -118,24 +109,32 @@
 
 /* Pulse glow (original) */
 @keyframes pulse-glow {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Border glow */
 @keyframes border-glow {
-  0%, 100% {
+  0%,
+  100% {
     border-color: hsl(var(--primary));
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2),
+      inset 0 0 10px rgba(0, 255, 255, 0.05);
   }
   50% {
     border-color: hsl(var(--secondary));
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3), inset 0 0 20px rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3),
+      inset 0 0 20px rgba(255, 0, 255, 0.1);
   }
 }
 
@@ -143,54 +142,45 @@
   animation: border-glow 3s ease-in-out infinite;
 }
 
-/* ------------------------------------------------------------------------- */
-/* NEW — ADDED FOR THE CYBERPUNK HERO */
-/* ------------------------------------------------------------------------- */
-
-/* FRAME CYBERPUNK */
 .neon-frame {
-  box-shadow:
-    0 0 25px rgba(0,255,255,0.25),
-    inset 0 0 20px rgba(0,255,255,0.15);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25),
+    inset 0 0 20px rgba(0, 255, 255, 0.15);
   animation: frameGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes frameGlow {
   0% {
-    box-shadow:
-      0 0 12px rgba(0,255,255,0.2),
-      inset 0 0 12px rgba(0,255,255,0.1);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2),
+      inset 0 0 12px rgba(0, 255, 255, 0.1);
   }
   100% {
-    box-shadow:
-      0 0 35px rgba(255,0,255,0.4),
-      inset 0 0 25px rgba(255,0,255,0.25);
+    box-shadow: 0 0 35px rgba(255, 0, 255, 0.4),
+      inset 0 0 25px rgba(255, 0, 255, 0.25);
   }
 }
 
-/* CRT Scanlines */
 @keyframes scanlines {
-  0% { background-position-y: 0; }
-  100% { background-position-y: 120px; }
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: 120px;
+  }
 }
 
 .animate-scanlines {
   animation: scanlines 12s linear infinite;
 }
 
-/* Neon title */
 .neon-title {
   color: #e8faff;
-  text-shadow:
-    0 0 8px rgba(0,255,255,0.5),
-    0 0 14px rgba(255,0,255,0.4);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5), 0 0 14px rgba(255, 0, 255, 0.4);
 }
 
-/* Neon buttons */
 .neon-button {
   border: 2px solid #00eaff;
   color: #00eaff;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .neon-button:hover {
@@ -203,7 +193,7 @@
 .neon-button-alt {
   border: 2px solid #ff85ea;
   color: #ff85ea;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .neon-button-alt:hover {
@@ -212,9 +202,6 @@
   box-shadow: 0 0 25px #ff85ea;
   transform: translateY(-2px);
 }
-/* ------------------------------------------------------------------------- */
-/* GLITCH TITLE — CYBERPUNK */
-/* ------------------------------------------------------------------------- */
 
 .glitch {
   position: relative;
@@ -244,19 +231,55 @@
 }
 
 @keyframes glitchTop {
-  0% { clip-path: inset(0 0 80% 0); transform: translate(0, -1px); }
-  20% { clip-path: inset(12% 0 60% 0); transform: translate(-2px, 1px); }
-  40% { clip-path: inset(25% 0 40% 0); transform: translate(2px, -1px); }
-  60% { clip-path: inset(40% 0 25% 0); transform: translate(-1px, 1px); }
-  80% { clip-path: inset(55% 0 15% 0); transform: translate(1px, -1px); }
-  100% { clip-path: inset(70% 0 0 0); transform: translate(0, 1px); }
+  0% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0, -1px);
+  }
+  20% {
+    clip-path: inset(12% 0 60% 0);
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    clip-path: inset(25% 0 40% 0);
+    transform: translate(2px, -1px);
+  }
+  60% {
+    clip-path: inset(40% 0 25% 0);
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    clip-path: inset(55% 0 15% 0);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    clip-path: inset(70% 0 0 0);
+    transform: translate(0, 1px);
+  }
 }
 
 @keyframes glitchBottom {
-  0% { clip-path: inset(80% 0 0 0); transform: translate(0, 1px); }
-  20% { clip-path: inset(60% 0 10% 0); transform: translate(1px, -1px); }
-  40% { clip-path: inset(40% 0 25% 0); transform: translate(-2px, 1px); }
-  60% { clip-path: inset(25% 0 40% 0); transform: translate(2px, -1px); }
-  80% { clip-path: inset(10% 0 60% 0); transform: translate(-1px, 1px); }
-  100% { clip-path: inset(0 0 80% 0); transform: translate(0, -1px); }
+  0% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(0, 1px);
+  }
+  20% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(1px, -1px);
+  }
+  40% {
+    clip-path: inset(40% 0 25% 0);
+    transform: translate(-2px, 1px);
+  }
+  60% {
+    clip-path: inset(25% 0 40% 0);
+    transform: translate(2px, -1px);
+  }
+  80% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0, -1px);
+  }
 }

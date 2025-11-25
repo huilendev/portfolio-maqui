@@ -58,12 +58,10 @@ const graphicProjects = [
 export default function Portfolio() {
   return (
     <section id="portfolio" className="py-32 relative">
-      {/* 🔹 Título SIN brillo rosa */}
       <h2 className="text-center text-6xl md:text-7xl font-black text-white mb-20 tracking-tight">
         PROYECTOS
       </h2>
 
-      {/* UX/UI */}
       <h3 className="text-center text-3xl md:text-4xl font-semibold text-white mb-10">
         UX/UI DESIGN
       </h3>
@@ -80,7 +78,6 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* Graphic */}
       <h3 className="text-center text-3xl md:text-4xl font-semibold text-white mb-10">
         GRAPHIC DESIGN
       </h3>
