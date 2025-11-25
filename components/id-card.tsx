@@ -13,13 +13,13 @@ export default function IdCard() {
           </h2>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Diseñadora UX/UI con más de 5 años en tecnología.
+            Soy Diseñadora UX/UI con más de 5 años de experiencia y me especializo en investigación y diseño end-to-end
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Combino research, estrategia y diseño para crear experiencias digitales funcionales y atractivas.
+            Llevo adelante los proyectos de principio a fin, incluyendo reuniones con clientes, definición de requerimientos, investigación y diseño de interfaces de alta fidelidad
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Lidero proyectos de principio a fin, trabajando cerca de los clientes y los equipos de desarrollo para lograr soluciones claras y con impacto real.
+             Me caracterizo por trabajar con autogestión, claridad y organización, asegurando soluciones funcionales, estéticas y alineadas a los objetivos del negocio.
           </p>
 
           <div className="pt-4">

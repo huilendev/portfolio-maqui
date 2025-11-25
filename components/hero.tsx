@@ -27,7 +27,7 @@ export default function Hero({ scrollY }: HeroProps) {
         />
       </div>
 
-      {/* 🔵🟢 Blobs neon SIN VIOLETA */}
+      
       <div
         className="absolute top-24 left-16 w-80 h-80 rounded-full opacity-25 blur-3xl mix-blend-screen"
         style={{
@@ -68,7 +68,10 @@ export default function Hero({ scrollY }: HeroProps) {
         </h1>
 
         <p className="text-xl md:text-2xl text-cyan-200/80 mb-10 font-light">
-          UX/UI Designer - Product designer - Research and strategy
+        Diseño experiencias digitales que resuelven problemas reales.
+        UX/UI Designer | Product Designer <br />
+      
+        Investigación — Estrategia — Diseño end-to-end
         </p>
 
         <div className="flex gap-6 justify-center flex-wrap">
