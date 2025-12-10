@@ -27,7 +27,7 @@ export default function IdCard() {
 
           <div className="pt-6">
             <a
-              href="/cv-macarena.pdf"
+              href="/Macarena Escalante-CV-UX_UI_Designer.pdf"
               download
               className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 font-mono uppercase tracking-wider hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] group"
             >
