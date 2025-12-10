@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface WorkMethodItem {
@@ -93,6 +93,70 @@ const useReveal = (text: string, inView: boolean) => {
   return output;
 };
 
+function WorkMethodCard({ method, index }: { method: WorkMethodItem; index: number }) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const revealedTitle = useReveal(method.title, inView);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60, filter: "blur(8px)" }}
+      animate={inView ? { opacity: 1, y: 0, filter: "none" } : { opacity: 0, y: 60, filter: "blur(8px)" }}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+        delay: index * 0.1,
+      }}
+      className="relative flex flex-col items-center"
+    >
+      <div className="relative z-20 flex-shrink-0 my-8">
+        <motion.div
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-[0_0_20px_rgba(0,255,255,0.6)] font-mono font-bold text-xl text-black"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={inView ? { scale: 1, rotate: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {method.phase}
+        </motion.div>
+
+        <motion.div
+          className="absolute inset-0 rounded-full bg-cyan-400/30"
+          animate={{
+            scale: [1, 1.4, 1],
+            opacity: [0.5, 0, 0.5],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <motion.div
+        className="relative z-30 p-6 bg-black/40 backdrop-blur-md shadow-[0_0_12px_rgba(0,255,255,0.4)] border border-cyan-400/40 w-full text-center mb-8"
+        whileHover={{
+          scale: 1.02,
+          boxShadow: "0 0 20px rgba(0,255,255,0.5)",
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <h3 className="text-xl font-bold uppercase tracking-wider text-cyan-300 font-mono mb-3">
+          {revealedTitle}
+        </h3>
+
+        <p className="text-foreground/80 leading-relaxed">
+          {method.description}
+        </p>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function WorkMethodItemCard() {
   return (
     <section
@@ -123,77 +187,9 @@ export default function WorkMethodItemCard() {
 
       <div className="relative max-w-2xl mx-auto">
         <div className="space-y-0">
-          {workMethods.map((method, index) => {
-            const { ref, inView } = useInView({
-              triggerOnce: true,
-              threshold: 0.3,
-            });
-            const controls = useAnimation();
-
-            const revealedTitle = useReveal(method.title, inView);
-
-            useEffect(() => {
-              if (inView) {
-                controls.start({ opacity: 1, y: 0, filter: "none" });
-              }
-            }, [inView, controls]);
-
-            return (
-              <motion.div
-                key={index}
-                ref={ref}
-                initial={{ opacity: 0, y: 60, filter: "blur(8px)" }}
-                animate={controls}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeOut",
-                  delay: index * 0.1,
-                }}
-                className="relative flex flex-col items-center"
-              >
-                <div className="relative z-20 flex-shrink-0 my-8">
-                  <motion.div
-                    className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-[0_0_20px_rgba(0,255,255,0.6)] font-mono font-bold text-xl text-black"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={inView ? { scale: 1, rotate: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    {method.phase}
-                  </motion.div>
-
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-cyan-400/30"
-                    animate={{
-                      scale: [1, 1.4, 1],
-                      opacity: [0.5, 0, 0.5],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                </div>
-
-                <motion.div
-                  className="relative z-30 p-6 bg-black/40 backdrop-blur-md shadow-[0_0_12px_rgba(0,255,255,0.4)] border border-cyan-400/40 w-full text-center mb-8"
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 0 20px rgba(0,255,255,0.5)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-xl font-bold uppercase tracking-wider text-cyan-300 font-mono mb-3">
-                    {revealedTitle}
-                  </h3>
-
-                  <p className="text-foreground/80 leading-relaxed">
-                    {method.description}
-                  </p>
-                </motion.div>
-              </motion.div>
-            );
-          })}
+          {workMethods.map((method, index) => (
+            <WorkMethodCard key={index} method={method} index={index} />
+          ))}
         </div>
       </div>
     </section>
