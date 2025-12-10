@@ -40,8 +40,7 @@ const experiences: ExperienceItem[] = [
     title: "Mercado Libre",
     subtitle: "",
     period: "Enero 2020 - Septiembre 2024",
-    description: [],
-    highlights: [
+    description: [
       "UX/UI Writing & Diseño: Diseño de pantallas con Design System, microcopy y tono de voz. Documentación clara para equipos de desarrollo y stakeholders.",
       "Frontend Developer: Desarrollo en React, TypeScript y Node.js. Implementación visual y mejoras de usabilidad. Responsable de landing de costos de venta.",
       "Backend Developer & QA: Desarrollo en Java y Golang. Automatización de testing y soporte técnico en producción.",
