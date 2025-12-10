@@ -29,9 +29,9 @@ export default function Home() {
       <Hero scrollY={scrollY} />
       <IdCard />
       <WorkMethodItemCard />
-       <Portfolio />
+      <Portfolio />
       <Experiencia />
-      <Metodologia />
+      {/* <Metodologia /> */}
       <Contact />
       <Footer />
     </div>

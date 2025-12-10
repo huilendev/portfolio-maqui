@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -42,7 +40,7 @@ export default function ProjectCard({
       rel="noopener noreferrer"
       className={`relative block transition-all duration-300 hover:scale-[1.02] ${c.bg} backdrop-blur-sm group`}
     >
-      <div className="relative w-full aspect-[4/3]">
+      <div className="relative w-full aspect-4/3">
         <svg
           className="absolute inset-0 w-full h-full transition-all duration-300"
           style={{ filter: c.glow }}
@@ -371,7 +369,7 @@ export default function ProjectCard({
           <h3 className="text-2xl font-bold text-white text-center mb-4 uppercase tracking-wider">
             {title}
           </h3>
-          <p className="text-gray-300 text-center text-sm leading-relaxed">
+          <p className="text-gray-300 text-center text-sm text-balance leading-relaxed max-w-[80%]">
             {description}
           </p>
         </div>
